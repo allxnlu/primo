@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{%load static%}
 
         {% block title %} {{title}} {% endblock %}
 
@@ -7,6 +8,10 @@
                 <p>
                         Currently Primo is in this event: {{cosplay.event}}<br>
                         {{cosplay.character}}
+                        <br>
+                        {{cosplay.no_images.name}}
+                        <br>
+                        <img src = '/static/cosplay/{{cosplay.no_images.name}}' width="500px">
                 </p>
 
                 <a href="{% url 'welcome' %}">Homepage</a>
