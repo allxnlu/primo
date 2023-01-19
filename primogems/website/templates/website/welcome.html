@@ -1,22 +1,19 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-        <meta charset="UTF-8">
-        <title>Welcome! </title>
-</head>
-<body>
-     <h1>Welcome to Primo's Website</h1>
-     <p>
-        This is the website showcasing Primo and his quirky antics.
-        A special trailer about this website can be seen on <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">Primo Trailer
-        </a>
-     </p>
-    <br>
-     <p>
-        {{norem}}
-     </p>
-     <h2>These are the cosplays Primo has done</h2>
-     <ul>
+{% extends "base.html" %}
+{% load static%}
+   {% block title %} Primo's Website {% endblock %}
+
+   {% block content %}
+      <h1>Welcome to Primo's Website</h1>
+      <img src="{% static 'website/fakeprimo.jpg'%}" width="400px">
+      <p>
+         This is the website showcasing Primo and his quirky antics.
+         A special trailer about this website can be seen on <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">Primo Trailer</a>
+      </p>
+      <p>
+         {{norem}}
+      </p>
+      <h2>These are the cosplays Primo has done</h2>
+      <ul>
          {% for anime in cosplay%}
             <li>
                <a href="{% url 'cosplay_detail' anime.id%}">
@@ -24,7 +21,6 @@
                </a>
             </li>
             {%endfor%}
-     </ul>
-     <a href="{% url 'event_list' %}">Events List</a>
-</body>
-</html>
+      </ul>
+      <a href="{% url 'event_list' %}">Events List</a>
+   {% endblock %}
