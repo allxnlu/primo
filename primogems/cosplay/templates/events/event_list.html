@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="UTF-8">
+        <title>Primo Events List</title> 
+</head>
+<body>
+     <h1>Event List</h1>
+     <p>
+        These are the events Primo has been in:
+     </p>
+    {%for ebento in events%}
+        <li>
+            <a href="{% url 'event_detail' ebento.id%}">
+                {{ebento.title}}
+            </a>
+        </li>
+    {%endfor%}
+</body>
+</html>

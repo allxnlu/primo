@@ -15,8 +15,16 @@
      <p>
         {{norem}}
      </p>
-     <p>
-        Currently Primo is in this event: {{curr_event}}<br>
-     </p>
+     <h2>These are the cosplays Primo has done</h2>
+     <ul>
+         {% for anime in cosplay%}
+            <li>
+               <a href="{% url 'cosplay_detail' anime.id%}">
+                  {{anime.title}}
+               </a>
+            </li>
+            {%endfor%}
+     </ul>
+     <a href="{% url 'event_list' %}">Events List</a>
 </body>
 </html>

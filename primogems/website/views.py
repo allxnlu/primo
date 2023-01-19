@@ -7,7 +7,7 @@ from cosplay.models import CosEvent, Cosplay
 def welcome(request):
     return render(request, "website/welcome.html",
         {"norem":"What if I told you that I've fallen, and I like the way you say my name~",
-        "curr_event": CosEvent.objects.all()[1],
+        "cosplay": Cosplay.objects.all(),
         "image": Cosplay.objects.all()[1].no_images})
 
 def date(request):
